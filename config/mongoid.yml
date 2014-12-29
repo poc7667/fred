@@ -58,7 +58,8 @@ development:
 test:
   sessions:
     default:
-      database: fred_test
+      database: fred_development
+      # database: fred_test
       hosts:
         - localhost:27017
       options:

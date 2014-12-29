@@ -64,7 +64,7 @@ gem "ember-rails"
 gem "ember-source"
 gem "emblem-rails"
 gem "jquery-rails"
-group :development do
+group :development, :test do
   gem "rspec-rails"
   gem "guard-rspec"
   gem "rspec-deep-ignore-order-matcher"
