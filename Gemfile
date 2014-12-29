@@ -78,7 +78,10 @@ group :development do
 end
 
 gem "paperclip", "~> 4.1"
-gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
-gem "resque_mailer", "~> 2.2.6"
-gem "resque-scheduler"
-gem "resque-status"
+# gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
+# gem "resque_mailer", "~> 2.2.6"
+# gem "resque-scheduler"
+# gem "resque-status"
+
+
+gem "mongoid", "~> 4.0.0"
