@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+      Categories of Economic Data - FRED - St. Louis Fed
+    </title>
+        <meta name="description" content="66 major categories of economic data. FRED: Download, graph, and track economic data.">
+            <meta name="keywords" content="Economic Data, Federal Reserve, Fed, Bank, St. Louis">
+    
+    
+        <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css?date=20141119">
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="/css/ie.css">
+    <![endif]-->
+    
+    
+  </head>
+  <body>
+      <a name="top" id="top"></a>
+<!--[if lt IE 7 ]> <div id="container" class="ie6"><![endif]-->
+<!--[if IE 7 ]> <div id="container" class="ie7"><![endif]-->
+<!--[if IE 8 ]> <div id="container" class="ie8"><![endif]-->
+<!--[if IE 9 ]> <div id="container" class="ie9"><![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> <div id="container"><!--<![endif]-->
+
+
+
+
+
+<div id="header">
+    <a href="/"><img src="/images/masthead-2x.png" id="logo" width="450" height="100" alt="Economic Research, Federal Reserve Bank of St. Louis"></a>
+    <div id="head-right">
+        
+        <div id="signin-wrap">
+            <div id="user-nav">
+                <ul class="signedout">
+                    <li><a href="/useraccount/">My Account</a></li>
+                    <li><a href="/useraccount/register">Register</a></li>
+                    <li>
+                        <a href="/useraccount/login" class="signin">Sign in</a>
+                        <div id="signin_menu" style="display:none">
+                            <form method="post" id="signin" action="https://research.stlouisfed.org/useraccount/login/secure">
+                                <p><label for="user-email">Email</label><input id="user-email" name="form[email]" value="" title="email" type="text"></p>
+                                <p><label for="user-password">Password</label><input id="user-password" name="form[password]" value="" title="password" type="password" autocomplete="off"></p>
+                                <p class="remember"><input id="signin_submit" value="Sign in" type="submit"><label for="remember" class="checkbox"><input id="remember" name="form[stay_logged_in]" value="1" type="checkbox"> Remember me</label></p>
+                                <p class="forgot"> <a href="/useraccount/forgotpassword/step1">Forgot your password?</a></p>
+                                <p><a href="/useraccount/learnmore">Learn More</a></p>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="signedin">
+                    <li>
+                        <a href="/useraccount/" class="my-account-link">My Account <i class="fa fa-angle-double-down"></i></a>
+                        <div class="my-account-menu" style="display:none">
+                            <p><a href="/useraccount/fredgraph" style="color:#333"><i class="fa fa-fw fa-list"></i> My Graphs</a></p>
+                            <p><a href="/useraccount/datalists" style="color:#333"><i class="fa fa-fw fa-file"></i> My Data Lists</a></p>
+                            <p><a href="/useraccount/dashboard" style="color:#333"><i class="fa fa-fw fa-th-large"></i> My Dashboards</a></p>
+                            <p><a href="/useraccount/" style="color:#333"><i class="fa fa-fw fa-home"></i>Account Home</a></p>
+                            <div class="my-fred-favorites">
+                                <p style="color:#999;text-transform:uppercase;font-size:0.8em">My Favorites</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="/useraccount/logout" class="signout">Sign out</a></li>
+                </ul>
+            </div>            
+        </div>
+        <br class="clear">
+        
+        <form action="/ssi/search.php" id="head-search-form">
+    	<div id="head-search-container">
+    	    <input type="text" id="head-search" name="q" class="js-placeholder" title="Search "><button type='submit' id="head-search-button">&nbsp;</button>
+            
+        </div>
+        </form>
+    </div>
+</div>
+
+<div id="research-nav">
+    <ul id="main-nav">
+        <li>
+            <a href="/fred2/" id="fred-link">FRED<span class="trademark" style="color:#FFF">&reg;</span> Economic Data</a>
+            <div id="mega-fred" class="mega-submenu">
+                <div id="fred-nav" class="mega-snapshot">
+
+                    <h3>FRED</h3>
+                    <ul class="mega-2col"> 
+                <li><a href="/fred2/tags/series">All Series</a></li>                       
+                <li><a href="/fred2/tags">Tags</a></li>
+		        <li><a href="/fred2/categories">Categories</a></li>
+		        <li><a href="/fred2/releases">Releases</a></li>
+                <li><a href="/fred2/sources">Sources</a></li>
+                <li><a href="/fred2/tags/series?ob=lu">Updates</a></li>
+                <li><a href="/fred2/releases/calendar">Release Calendar</a></li>
+                <li><a href="http://fredblog.stlouisfed.org">FRED Blog <span class="badge">NEW</span></a></li>
+                    </ul>
+                                    </div>
+
+                <div id="fred-popular" class="mega-content">
+
+                    <h3>Popular Series</h3>
+		    <img src="/images/fred-logo-2x.png" width="200" height="64" alt="FRED Logo" style="float:right;margin:1em">
+		    <ul>
+                                                <li><a href="/fred2/series/CPIAUCSL">Consumer Price Index for All Urban Consumers: All Items</a></li>
+                                                <li><a href="/fred2/series/BAMLH0A0HYM2">BofA Merrill Lynch US High Yield Master II Option-Adjusted Spread©</a></li>
+                                                <li><a href="/fred2/series/GDPC1">Real Gross Domestic Product</a></li>
+                                                <li><a href="/fred2/series/UNRATE">Civilian Unemployment Rate</a></li>
+                                                <li><a href="/fred2/series/FEDFUNDS">Effective Federal Funds Rate</a></li>
+                                                <li><a href="/fred2/series/DGS10">10-Year Treasury Constant Maturity Rate</a></li>
+                                                <li><a href="/fred2/tags/series?ob=pv">Top 50 Popular Series</a></li>
+                    </ul>
+
+                    <br class="clear">
+                </div>
+            </div>
+        </li>
+        <li><a href="/datatools.html">Data Tools</a>
+            <div class="mega-submenu">
+            <div id="data-tools" class="mega-content">
+		<h3>Data Tools</h3>
+
+                <p><img src="/images/data-tools-fred.png" width="35" height="35" alt="FRED logo"><span><strong><a href="/fred2/graph/?utm_source=research&utm_medium=website&utm_campaign=data-tools">Create Your Own Graphs</a></strong>
+                <br>FRED Graph - Create graphs using FRED data.</span>
+                </p>
+
+                <p><img src="/images/data-tools-iphone.png" width="35" height="35" alt="iPhone logo"><span><strong><a href="/fred-mobile/?utm_source=research&utm_medium=website&utm_campaign=data-tools">Access Data on the Go</a></strong>
+                <br>FRED Mobile Apps</span>
+                </p>
+
+                <p><img src="/images/data-tools-excel.png" width="35" height="35" alt="Excel logo"><span><strong><a href="/fred-addin/?utm_source=research&utm_medium=website&utm_campaign=data-tools">Load Data from Excel</a></strong>
+                <br>FRED Add-in - Load FRED data directly into Microsoft&reg; Excel&reg;.</span>
+                </p>
+
+                <p><img src="/images/data-tools-geofred.png" width="35" height="35" alt="GeoFRED logo"><span><strong><a href="http://geofred.stlouisfed.org/?utm_source=research&utm_medium=website&utm_campaign=data-tools">Create Your Own Maps</a></strong>
+                <br>GeoFRED - Map data at state, MSA &amp; county levels.</span>
+                </p>
+
+                <p><img src="/images/data-tools-alfred.png" width="35" height="35" alt="ALFRED logo"><span><strong><a href="http://alfred.stlouisfed.org/?utm_source=research&utm_medium=website&utm_campaign=data-tools">View Archival Economic Data</a></strong>
+                <br>ALFRED - View and chart vintage FRED data.</span>
+                </p>
+
+                <p><img src="/images/data-tools-fred.png" width="35" height="35" alt="FRED logo"><span><strong><a href="http://api.stlouisfed.org/docs/fred/?utm_source=research&utm_medium=website&utm_campaign=data-tools">Developer Access to FRED</a></strong>
+                <br>API - Access FRED data in your own applications.</span>
+                </p>
+
+                <p><img src="/images/data-tools-fred.png" width="35" height="35" alt="FRED logo"><span><strong><a href="http://fredqa.stlouisfed.org/2012/12/20/embedded-fred-a-widget-just-for-you/">Embedded FRED Data</a></strong>
+                <br>Show 6 of our most popular data series on your website or blog. <a href="http://research.stlouisfed.org/fred-glance-widget/configure.html">Now you can customize your widget!</a></span>
+                </p>
+
+            </div>
+            </div>
+        </li>
+        <li>
+            <a href="/publications/" id="publications-link">Publications</a>
+
+            <div id="mega-publications" class="mega-submenu">
+                <div id="pub-listing" class="mega-snapshot">
+                    <h3>Publications</h3>
+                    <ul>
+                        <li><a href="/publications/usfd/">US Financial Data</a></li>
+                        <li><a href="/publications/review/">Review</a></li>
+                        <li><a href="/publications/es/">Economic Synopses</a></li>
+                        <li><a href="/pageone-economics/pages/newsletter_summary.php">Page One Economics Newsletter</a></li>
+                        <li><a href="/regecon/district.html">Burgundy Books</a></li>
+                        <li><a href="http://stlouisfed.org/publications/re/">The Regional Economist</a></li>
+                        <li><a href="/publications/">All Publications</a></li>
+                    </ul>
+                </div>
+
+                <div id="pub-recent" class="mega-content">
+
+                    <h3>Featured Publication</h3>
+
+                    <div>
+                    <h4><a href="/publications/review/">The Federal Reserve Bank of St. Louis Review</a></h4>
+                    <p>A quarterly research journal intended for an economically informed but broad readership—from the undergraduate student to the PhD.</p>
+
+                    <p class="notice"><a href="/publications/review/">Current Issue</a> | <a href="/publications/review/past/">Previous Issues</a></p>
+
+                    <p><strong>In this Issue:</strong></p>
+                    <ul id="in-this-issue">
+                                                   <li><a href="/publications/review/article/10287">The State of Young Adults’ Balance Sheets: Evidence from the Survey of Consumer Finances</a></li>
+                                                   <li><a href="/publications/review/article/10288">Student Loan Debt: Can Parental College Savings Help?</a></li>
+                                                   <li><a href="/publications/review/article/10289">Toward Healthy Balance Sheets: Are Savings Accounts a Gateway to Young Adults’ Asset Diversification and Accumulation?</a></li>
+                                                   <li><a href="/publications/review/article/10290">Asset Holdings of Young Households: Trends and Patterns</a></li>
+                               
+                            <li><a href="/publications/review/">more</a></li>
+                    </ul>
+
+                    </div>
+                    <a href="/publications/review/"><img src="/images/2014ReviewCover.jpg" alt="Review"></a>
+
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="/wp/" id="workingpapers-link">Working Papers</a>
+            <div id="mega-workingpapers" class="mega-submenu">
+                <div id="wp-categories" class="mega-snapshot">
+
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="/wp/archives/?category_id=32">Applied Econometrics</a></li>
+                        <li><a href="/wp/archives/?category_id=33">Applied Microeconomics</a></li>
+                        <li><a href="/wp/archives/?category_id=11">Banking</a></li>
+                        <li><a href="/wp/archives/?category_id=2">Finance</a></li>
+                        <li><a href="/wp/archives/?category_id=4">International</a></li>
+                        <li><a href="/wp/archives/?category_id=50">Mathematical and Quantitative Methods</a></li>
+                        <li><a href="/wp/archives/?category_id=40">Monetary Policy</a></li>
+                        <li><a href="/wp/archives/?category_id=48">Regional Economics</a></li>
+                    </ul>
+                    <br class="clear">
+                </div>
+
+                <div id="wp-recent" class="mega-content">
+
+                    <h3>Recent Working Papers</h3>
+                    <dl id="wp-listing">
+                                                
+                        <dt>
+			    <span class="wp-published-date">Dec 12</span>
+                            <a href="/wp/more/2014-050/">Semi-Parametric Interpolations of Residential Location Values: Using Housing Price Data to Generate Balanced Panels</a>
+                        </dt>
+                        <dd>
+                            <span class="byline">Jeffrey P. Cohen, Cletus C. Coughlin, and John M. Clapp</span>
+                        </dd>
+                                                
+                        <dt>
+			    <span class="wp-published-date">Nov 24</span>
+                            <a href="/wp/more/2014-049/">Equilibrium Sovereign Default with Exchange Rate Depreciation</a>
+                        </dt>
+                        <dd>
+                            <span class="byline">Sergey V. Popov and David Wiczer</span>
+                        </dd>
+                                                
+                        <dt>
+			    <span class="wp-published-date">Nov 17</span>
+                            <a href="/wp/more/2014-048/">Explaining Educational Attainment across Countries and over Time</a>
+                        </dt>
+                        <dd>
+                            <span class="byline">Diego Restuccia and Guillaume Vandenbroucke</span>
+                        </dd>
+                                                
+                        <dt>
+			    <span class="wp-published-date">Nov 14</span>
+                            <a href="/wp/more/2014-047/">Universal Basic Income versus Unemployment Insurance</a>
+                        </dt>
+                        <dd>
+                            <span class="byline">Alice Fabre, St&eacute;phane Pallage, and Christian Zimmermann</span>
+                        </dd>
+                                                
+                        <dt>
+			    <span class="wp-published-date">Nov 13</span>
+                            <a href="/wp/more/2014-046/">Metro Business Cycles</a>
+                        </dt>
+                        <dd>
+                            <span class="byline">Maria A. Arias, Charles S. Gascon, and David E. Rapach</span>
+                        </dd>
+                                                
+                    </dl>
+                    <br class="clear">
+                </div>
+            </div>
+
+        </li>
+        <li>
+            <a href="/econ/" id="economist-link">Economists</a>
+            <div id="mega-economists" class="mega-submenu">
+                <div id="exec-economists" class="mega-snapshot">
+
+                    <h3>Leadership</h3>
+                    <dl>
+                        <dt><a href="/econ/bullard/">James Bullard</a></dt>
+                        <dd>President &amp; Chief Executive Officer</dd>
+
+                        <dt><a href="/econ/waller/">Christopher J. Waller</a></dt>
+                        <dd>Director of Research</dd>
+
+                        <dt><a href="/econ/coughlin/">Cletus C. Coughlin</a></dt>
+                        <dd>Policy Adviser</dd>
+
+                        <dt><a href="/econ/wheelock/">David C. Wheelock</a></dt>
+                        <dd>Deputy Director of Research</dd>
+			<dt><a href="/econ/ravikumar/">B. Ravikumar</a></dt>
+			<dd>Deputy Director of Research</dd>
+                    </dl>
+                </div>
+
+                <div id="staff-economists" class="mega-content">
+                    <h3>Economists</h3>
+                    <ul class="mega-4col">
+                        <li><a href="/econ/andolfatto/">David Andolfatto</a></li>
+                        <li><a href="/econ/azariadis/">Costas Azariadis</a></li>
+                        <li><a href="/econ/badel/">Alejandro Badel</a></li>
+                        <li><a href="/econ/bandyopadhyay/">Subhayu Bandyopadhyay</a></li>
+                        <li><a href="/econ/berentsen/">Aleksander Berentsen</a></li>
+                        <li><a href="/econ/boldrin/">Michele Boldrin</a></li>
+                        <li><a href="/econ/canon/">Maria E. Canon</a></li>
+                        <li><a href="/econ/chien/">YiLi Chien</a></li>
+                        <li><a href="/econ/contessi/">Silvio Contessi</a></li>
+                    </ul>
+                    <ul class="mega-4col">
+                        <li><a href="/econ/dicecio/">Riccardo DiCecio</a></li>
+                        <li><a href="/econ/dvorkin/">Maximiliano A. Dvorkin</a></li>
+                        <li><a href="/econ/dupor/">William Dupor</a></li>
+                        <li><a href="/econ/garriga/">Carlos Garriga</a></li>
+                        <li><a href="/econ/gavin/">William T. Gavin</a></li>
+                        <li><a href="/econ/hernandez/">Rub&eacute;n Hern&aacute;ndez-Murillo</a></li>
+                        <li><a href="/econ/kliesen/">Kevin L. Kliesen</a></li>
+                        <li><a href="/econ/levine/">David Levine</a></li>
+                        <li><a href="/econ/manuelli/">Rodolfo Manuelli</a></li>
+                    </ul>
+                    <ul class="mega-4col">
+                        <li><a href="/econ/martin/">Fernando M. Martin</a></li>
+                        <li><a href="/econ/mccracken/">Michael W. McCracken</a></li>
+                        <li><a href="/econ/monge-naranjo/">Alexander Monge-Naranjo</a></li>
+                        <li><a href="/econ/cneely/">Christopher J. Neely</a></li>
+                        <li><a href="/econ/otrok/">Christopher Otrok</a></li>
+                        <li><a href="/econ/owyang/">Michael T. Owyang</a></li>
+                        <li><a href="/econ/restrepo-echavarria/">Paulina Restrepo-Echavarria</a></li>
+                        <li><a href="/econ/sanchez/">Juan M. S&aacute;nchez</a></li>
+                    </ul>
+                    <ul class="mega-4col">
+			<li><a href="/econ/santacreu">Ana Maria Santacreu</a></li>
+                        <!--<li><a href="/econ/santaeulalia-llopis/">Raul Santaeulalia-Llopis</a></li>-->
+                        <li><a href="/econ/shin/">Yongseok Shin</a></li>
+			<li><a href="/econ/vandenbroucke/">Guillaume Vandenbroucke</a></li>
+			<li><a href="/econ/wang/">Ping Wang</a></li>
+                        <li><a href="/econ/wen/">Yi Wen</a></li>
+                        <li><a href="/econ/wiczer">David Wiczer</a></li>
+                        <li><a href="/econ/williamson/">Stephen Williamson</a></li>
+                        <li><a href="/econ/zimmermann/">Christian Zimmermann</a></li>
+                    </ul>
+
+                    <br class="clear">
+
+                </div>
+            </div>
+        </li>
+        
+        <li><a href="/resources.html">More</a>
+        <div class="mega-submenu">
+            <div class="mega-snapshot">
+                <h3>Tools</h3>
+                <ul>
+                    <li><a href="/fred2/"><strong>FRED&reg;</strong></a></li>
+                    <li><a href="http://alfred.stlouisfed.org"><strong>ALFRED&reg;</strong></a></li>
+                    <li><a href="http://geofred.stlouisfed.org"><strong>GeoFRED&reg;</strong></a></li>
+                    <li><a href="http://ideas.repec.org"><strong>IDEAS</strong></a></li>
+                    <li><a href="http://cassidi.stlouisfed.org"><strong>CASSIDI&reg;</strong></a></li>
+                    <li><a href="http://fraser.stlouisfed.org"><strong>FRASER&reg;</strong></a></li>                    
+                    <li><a href="http://api.stlouisfed.org"><strong>Developers / API</strong></a></li>
+                </ul>
+                <br class="clear">
+            </div>
+            <div id="more-research" class="mega-content">
+		<h3>More Services</h3>
+                
+		<p><a href="/conferences"><strong>Events</strong></a>
+		<br>Information on conferences, seminars, and workshops sponsored by the Research Division.
+		</p>
+
+        <p><a href="/regecon/"><strong>8th District Economy</strong></a>
+        <br>Find economic data and reports on economic conditions in the Federal Reserve's Eighth District.
+        </p>
+
+		<p><a href="/jobopps/"><strong>Careers</strong></a>
+		<br>Job opportunities offered by the Research Division
+		</p>
+
+		<p><a href="/pageone-economics"><strong>Page One Economics</strong></a>
+		<br>Includes a newsletter, data "starter set," and other economic resources.
+        </p>
+		
+		<p><a href="http://www.stlouisfed.org/education_resources/"><strong>Education Resources</strong></a>
+		<br>Classroom resources for elementary, middle-school, high-school, and college educators.
+		</p>
+		
+        <p><img src="/apps/econwise/EconWise_72px.png" height="50" width="50" alt="EconWise logo" style="float:right;margin-left:1em"><a href="/apps/econwise/"><strong>EconWise</strong></a>
+        <br>The excellent economic analysis you expect, now with the advantages of a free mobile app.
+        </p>
+
+		<p><a href="/aggreg/"><strong>Monetary Aggregates</strong></a>
+		<br>Data and information relating to monetary aggregates.
+		</p>
+
+		<p><a href="/downloads/Research_infographic_web.pdf"><strong>Economic Information Infographic</strong></a>
+		<br>A guide to understanding the economy using the resources of the Federal Reserve Bank of St. Louis.
+		</p>
+
+
+		<p  style="float:right" align="right"><a href="/resources.html">View All</a></p>
+                
+            </div>
+            </div>
+        </li>
+        <li style="float:right;border:0"><a href="http://stlouisfed.org" style="color:#CCC;">St. Louis Fed Home</a></li>
+
+
+    </ul>
+</div>
+
+<div id="content">
+
+<div id="content-container">
+
+      <div id="content-2columns-left">  
+    <a href="/fred2/"><img src="/images/fred-logo-2x.png" width="200" height="64" alt="FRED Economic Data | St. Louis Fed"></a><br><br>
+    <h2>Browse Data</h2>
+    <ul class="list-bullets">
+    <li><a href="/fred2/tags/series">All Series</a></li>    
+    <li><a href="/fred2/tags/">Tags</a></li>    
+    <li><a href="/fred2/categories/">Categories</a></li>
+    <li><a href="/fred2/releases/">Releases</a></li>
+    <li><a href="/fred2/sources">Sources</a></li>
+    <li><a href="/fred2/tags/series?ob=lu">Updates</a></li>
+    <li><a href="/fred2/releases/calendar">Release Calendar</a></li>
+    <li><a href="/pdl">Published Data Lists</a></li>
+    </ul>
+
+    <h2>Tools</h2>
+    <ul class="list-icons">
+    <li><a href="/fred2/downloaddata/" class="icon-download">Download All Data</a></li>
+    <li><a href="/useraccount/datalists/" class="icon-datalist">My Data Lists</a></li>
+    <li><a href="/fred2/graph/" class="icon-graph">FRED Graph</a></li>    
+    <li><a href="/fred-mobile/" class="icon-iphone">FRED Mobile Apps</a></li>
+    <li><a href="/fred-addin/" class="icon-excel">FRED Add-In</a><span style="margin-left:22px">for Microsoft&reg; Excel&reg;</span></li>
+    <li><a href="http://geofred.stlouisfed.org" class="icon-map">GeoFRED<span class="icon-offsite">&nbsp;</span></a></li>
+    <li><a href="http://api.stlouisfed.org" class="icon-api">Developer API<span class="icon-offsite">&nbsp;</span></a></li>
+    </ul>
+    
+    <h2>Need Help?</h2>
+    <ul class="list-bullets">
+    <li><a href="http://fredqa.stlouisfed.org/2014/03/27/fred-graph-how-to-step-by-step-tutorials/">Tutorials</a></li>
+    <li><a href="/fred2/help-faq/">FAQs</a></li>
+    <li><a href="/contactus/email_fred.php">Email Us</a></li>
+    </ul>
+
+   
+</div>
+
+   <div id="content-2columns-main" style="background-color:#ffffff">
+            <p id="breadcrumbs">
+     <span>
+       <a href="/">Home</a> &gt; <a class="breadcrumb_link" href="/fred2/">FRED&#174 Economic Data</a>
+     </span>
+   </p>
+         
+      
+      <h1>Categories</h1>
+          
+   <div class="fred-categories-group">
+<p class="large fred-categories-parent">
+    <a href="/fred2/categories/33060"><strong>Academic Data</strong></a> <span class="category-count">(13,617)</span>
+</p>
+<p class="fred-categories-children">
+        <span class="fred-categories-child"><a href="/fred2/categories/33061">NBER Macrohistory Database</a> <span class="category-count">(3,036)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33100">Penn World Table 7.1</a> <span class="category-count">(5,890)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33402">Penn World Table 8</a> <span class="category-count">(4,542)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33120">Recession Probabilities</a> <span class="category-count">(1)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33123">Weekly U.S. and State Bond Prices, 1855-1865</a> <span class="category-count">(1)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33201">Economic Policy Uncertainty</a> <span class="category-count">(12)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33442">Sticky Wages and Comovement</a> <span class="category-count">(7)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33488">Macro Dataset for Estimating Factors</a> <span class="category-count">(130)</span></span>
+        <br class="clear">
+    <!--[if IE]><br><!endif-->
+</p>
+</div>
+<div class="fred-categories-group">
+<p class="large fred-categories-parent">
+    <a href="/fred2/categories/32991"><strong>Money, Banking, &amp; Finance</strong></a> <span class="category-count">(6,191)</span>
+</p>
+<p class="fred-categories-children">
+        <span class="fred-categories-child"><a href="/fred2/categories/23">Banking</a> <span class="category-count">(1,929)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32360">Business Lending</a> <span class="category-count">(2,563)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/15">Exchange Rates</a> <span class="category-count">(98)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/46">Financial Indicators</a> <span class="category-count">(355)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32145">Foreign Exchange Intervention</a> <span class="category-count">(21)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/22">Interest Rates</a> <span class="category-count">(723)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/24">Monetary Data</a> <span class="category-count">(511)</span></span>
+        <br class="clear">
+    <!--[if IE]><br><!endif-->
+</p>
+</div>
+<div class="fred-categories-group">
+<p class="large fred-categories-parent">
+    <a href="/fred2/categories/32992"><strong>National Accounts</strong></a> <span class="category-count">(15,291)</span>
+</p>
+<p class="fred-categories-children">
+        <span class="fred-categories-child"><a href="/fred2/categories/5">Federal Government Debt</a> <span class="category-count">(32)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32251">Flow of Funds</a> <span class="category-count">(2,197)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/18">National Income &amp; Product Accounts</a> <span class="category-count">(12,469)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/13">U.S. Trade &amp; International Transactions</a> <span class="category-count">(593)</span></span>
+        <br class="clear">
+    <!--[if IE]><br><!endif-->
+</p>
+</div>
+<div class="fred-categories-group">
+<p class="large fred-categories-parent">
+    <a href="/fred2/categories/10"><strong>Population, Employment, &amp; Labor Markets</strong></a> <span class="category-count">(10,628)</span>
+</p>
+<p class="fred-categories-children">
+        <span class="fred-categories-child"><a href="/fred2/categories/32250">ADP Employment</a> <span class="category-count">(29)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/12">Current Population Survey (Household Survey)</a> <span class="category-count">(2,729)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/11">Current Employment Statistics (Establishment Survey)</a> <span class="category-count">(796)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33500">Education</a> <span class="category-count">(6,445)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33001">Income Distribution</a> <span class="category-count">(25)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32241">Job Openings and Labor Turnover (JOLTS)</a> <span class="category-count">(461)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33509">Labor Market Conditions Indexes</a> <span class="category-count">(3)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/104">Population</a> <span class="category-count">(41)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/2">Productivity &amp; Costs</a> <span class="category-count">(81)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32240">Weekly Initial Claims</a> <span class="category-count">(17)</span></span>
+        <br class="clear">
+    <!--[if IE]><br><!endif-->
+</p>
+</div>
+<div class="fred-categories-group">
+<p class="large fred-categories-parent">
+    <a href="/fred2/categories/1"><strong>Production &amp; Business Activity</strong></a> <span class="category-count">(7,486)</span>
+</p>
+<p class="fred-categories-children">
+        <span class="fred-categories-child"><a href="/fred2/categories/32262">Business Cycle Expansions &amp; Contractions</a> <span class="category-count">(293)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32436">Construction</a> <span class="category-count">(96)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33490">Finance Companies</a> <span class="category-count">(177)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32216">Health Insurance</a> <span class="category-count">(5)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/97">Housing</a> <span class="category-count">(162)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/3">Industrial Production &amp; Capacity Utilization</a> <span class="category-count">(27)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32295">Institute for Supply Management Report on Business</a> <span class="category-count">(22)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32429">Manufacturing</a> <span class="category-count">(967)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/6">Retail Trade</a> <span class="category-count">(62)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33441">Services</a> <span class="category-count">(5,404)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33492">Technology</a> <span class="category-count">(4)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33202">Transportation</a> <span class="category-count">(43)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/33203">Wholesale Trade</a> <span class="category-count">(230)</span></span>
+        <br class="clear">
+    <!--[if IE]><br><!endif-->
+</p>
+</div>
+<div class="fred-categories-group">
+<p class="large fred-categories-parent">
+    <a href="/fred2/categories/32455"><strong>Prices</strong></a> <span class="category-count">(2,939)</span>
+</p>
+<p class="fred-categories-children">
+        <span class="fred-categories-child"><a href="/fred2/categories/32217">Commodities</a> <span class="category-count">(298)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/9">Consumer Price Indexes (CPI and PCE)</a> <span class="category-count">(606)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/4">Employment Cost Index</a> <span class="category-count">(424)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/31">Producer Price Indexes (PPI)</a> <span class="category-count">(39)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32261">House Price Indices</a> <span class="category-count">(668)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32220">Trade Indexes</a> <span class="category-count">(903)</span></span>
+        <br class="clear">
+    <!--[if IE]><br><!endif-->
+</p>
+</div>
+<div class="fred-categories-group">
+<p class="large fred-categories-parent">
+    <a href="/fred2/categories/32263"><strong>International Data</strong></a> <span class="category-count">(89,739)</span>
+</p>
+<p class="fred-categories-children">
+        <span class="fred-categories-child"><a href="/fred2/categories/32264">Countries</a> <span class="category-count">(82,597)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32955">Geography</a> <span class="category-count">(82)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32265">Indicators</a> <span class="category-count">(87,052)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32956">Institutions</a> <span class="category-count">(6,156)</span></span>
+        <br class="clear">
+    <!--[if IE]><br><!endif-->
+</p>
+</div>
+<div class="fred-categories-group">
+<p class="large fred-categories-parent">
+    <a href="/fred2/categories/3008"><strong>U.S. Regional Data</strong></a> <span class="category-count">(102,023)</span>
+</p>
+<p class="fred-categories-children">
+        <span class="fred-categories-child"><a href="/fred2/categories/27281">States</a> <span class="category-count">(97,919)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32043">Census Regions</a> <span class="category-count">(844)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32061">BEA Regions</a> <span class="category-count">(120)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32849">BLS Regions</a> <span class="category-count">(1,966)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32071">Federal Reserve Districts</a> <span class="category-count">(1,124)</span></span>
+        <span class="fred-categories-child"><a href="/fred2/categories/32233">Freddie Mac Regions</a> <span class="category-count">(50)</span></span>
+        <br class="clear">
+    <!--[if IE]><br><!endif-->
+</p>
+</div>
+
+
+   </div>
+
+   
+   
+<br class="clear">
+</div>
+</div>
+   <div id="recently-viewed" class="hide" style="padding-left: 55px;">
+      <h4>Recently Viewed Series</h4>
+      <ul class="thumbnails">
+          <li class="span2 hide"><a href="" class="thumbnail"><img src="" alt=""></a><span></span></li>
+          <li class="span2 hide"><a href="" class="thumbnail"><img src="" alt=""></a><span></span></li>
+          <li class="span2 hide"><a href="" class="thumbnail"><img src="" alt=""></a><span></span></li>
+          <li class="span2 hide"><a href="" class="thumbnail"><img src="" alt=""></a><span></span></li>
+          <li class="span2 hide"><a href="" class="thumbnail"><img src="" alt=""></a><span></span></li>
+      </ul>
+   </div>
+<br class="clear">
+
+<div id="footer">
+
+        <div>
+            <strong class="footer-section-header">MY ACCOUNT:</strong>
+            <ul>
+                <li><a href="/useraccount/login/">Sign In</a></li>
+                <li class="last-item"><a href="/useraccount/register/">Register</a></li>
+            </ul>
+            <br class="clear">
+        </div>
+        
+        <div>
+            <strong class="footer-section-header">ABOUT:</strong>
+            <ul>
+                <li><a href="/jobopps/">Employment</a></li>
+                <li><a href="/contactus/">Contact</a></li>
+                <li><a href="/customer-comments.html">Customer Comments</a></li>
+                <li><a href="/followfed.html">Follow the Fed</a>
+                <li><a href="/rss/">RSS</a></li>
+                <li><a href="/privacy.html">Privacy</a></li>
+                <li><a href="/legal.html">Legal</a></li>
+            </ul>
+            <br class="clear">
+        </div>
+        
+        <div>
+            <strong class="footer-section-header">SERVICES:</strong>
+            <ul>
+                <li><a href="/fred2/">FRED&reg;</a></li>
+                <li><a href="http://m.research.stlouisfed.org/">Mobile FRED&reg;</a></li>
+                <li><a href="http://alfred.stlouisfed.org/">ALFRED&reg;</a></li>
+                <li><a href="http://geofred.stlouisfed.org">GeoFRED&reg;</a></li>
+                <li><a href="http://fredblog.stlouisfed.org">FRED&reg; Blog</a></li>
+                <li><a href="http://cassidi.stlouisfed.org">CASSIDI&reg;</a></li>
+                <li><a href="http://fraser.stlouisfed.org">FRASER&reg;</a></li>
+                <li><a href="http://api.stlouisfed.org">Developer/APIs</a></li>
+                <li class="last-item"><a href="http://ideas.repec.org">IDEAS</a></li>
+            </ul>
+            <br class="clear">
+        </div>
+
+        
+        <div>
+            <strong class="footer-section-header">RESEARCH:</strong>
+            <ul>
+            <li><a href="/regecon/">8th District Economy</a></li>
+            <li><a href="/pageone-economics/">Page One Economics</a></li>
+            <li><a href="/conferences/">Events</a></li>
+            <li><a href="/aggreg/">Monetary Aggregates</a></li>
+            <li><a href="/resources.html">Other Resources</a></li>
+            <li><a href="http://stlouisfed.org/education_resources/">Education Resources</a></li>
+            <li><a href="http://stlouisfed.org/fomcspeak/">FOMC Speak</a></li>
+            </ul>
+            <br class="clear">
+        </div>
+
+        <div>
+            <strong class="footer-section-header">HELP:</strong>
+            <ul>
+                <li>Data:
+                    <a href="/contactus/email_fred.php">stlsFRED@stls.frb.org</a></li>
+                <li>Questions/Comments:
+                    <a href="/contactus/email_research_webmaster.php">webmaster@research.stlouisfed.org</a></li>
+                <li><a href="/fred2/help-faq/">FRED Help</a></li>
+                <li class="last-item"><a href="/help.html">More Help</a></li>
+            </ul>
+            <br class="clear">
+        </div>
+        
+        <div>
+            <strong class="footer-section-header">TOOLS:</strong>
+            <ul>
+                <li><a href="/fred-mobile/">FRED Mobile Apps</a></li>
+                <li><a href="/fred-addin/">FRED Add-In</a> for Microsoft&reg; Excel&reg;</li>
+                <li><a href="http://fredqa.stlouisfed.org/2012/12/20/embedded-fred-a-widget-just-for-you/">Embeddable FRED Widget</a></li>
+                <li><a href="http://research.stlouisfed.org/apps/econwise/">EconWise iPad App</a></li>
+            </ul>
+            <br class="clear">
+        </div>
+        
+        <div>
+            <strong class="footer-section-header">OUR SITES:</strong>
+            <ul>
+                <li><a href="http://stlouisfed.org/">St. Louis Fed</a></li>
+                <li><a href="http://federalreserveonline.org">Federal Reserve System</a></li>
+                <li><a href="/">Economic Research</a></li>
+            </ul>
+            <br class="clear">
+        </div>
+        
+    </div>
+    <div class="footer2">
+    <div class="footer2-left">
+        <form action="//federalreservebankofstlouis.createsend.com/t/t/s/pkiil/" method="post" style="padding:0;margin:0">
+            <strong>Subscribe to our newsletter</strong> for updates on published research, data news, and latest econ information.<br>
+            Name: <input type="text" size="15" name="cm-name">
+            &nbsp;
+            Email: <input type="text" size="15" name="cm-pkiil-pkiil">
+            &nbsp;
+            <input type="hidden" name="cm-f-ttjlj" value="Research site footer">
+            <input type="submit" name="submit" value="Subscribe" class="footer2-submit">
+        </form>
+    </div>
+    <div class="footer2-right">
+        <a href="http://bit.ly/9ngC3L"><img src="/images/twitter-logo-h100-w100.png" width="25" height="25" alt="Twitter logo"></a>
+        <a href="http://bit.ly/19UjvkQ"><img src="/images/gplus-logo-h50.png" height="25" width="25" alt="Google Plus logo"></a>
+        <a href="http://bit.ly/HeaderFB"><img src="/images/facebook-logo-h100-w100.png" width="25" height="25" alt="Facebook logo"></a>
+        <a href="http://bit.ly/aY9TVF"><img src="/images/youtube-logo-h100-w100.png" height="25" width="25" alt="YouTube logo"></a>
+        <a href="http://bit.ly/d056zL"><img src="/images/linkedin-logo-h50.png" height="25" width="30" alt="LinkedIn logo"></a>
+    </div>
+    <br class="clear">
+    </div>
+
+
+<div id="footer-bottom">
+    <div id="address">
+        Federal Reserve Bank of St. Louis, 
+        One Federal Reserve Bank Plaza, 
+        St. Louis, MO 63102
+    </div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9926151-1");
+if(window.tags) {
+    pageTracker._setCustomVar(1, 'tags', tags);
+}
+pageTracker._trackPageview();
+pageTracker._trackPageLoadTime();
+} catch(err) {}</script>
+<script src="/js/gaAddons.js" type="text/javascript"></script>
+
+
+<!-- jquery include start -->
+<script src="//www.google.com/jsapi?key=ABQIAAAAPelFyeCz0PpV85SR5rWaqRRhAb2Ap3qYoysH45CbGq2mti5UQBSkEmzrEopuvbJMUl_7-XoJ24PVBg" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js" type="text/javascript"></script>
+   <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+   <script>
+       $(function(){
+            var btn = $.fn.button.noConflict(); 
+            $.fn.btn = btn;
+        });
+    </script>
+<!-- jquery include end -->
+<script src="/js/jquery/plugins/jquery.hoverIntent.minified.js" type="text/javascript"></script>
+<script src="/js/dbeta-common.js?20140721-1" type="text/javascript"></script>
+<script src="/js/lib/jquery/plugins/jquery.hotkeys.js"></script>
+<!--[if lt IE 7 ]>
+<script src="/js/dd_belatedpng.js" type="text/javascript"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('img, #followus a, .icon-pdf');
+</script>
+<![endif]-->
+
+<script src="/js/jquery/plugins/jquery.cookie.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(function(){
+    $( "#head-search" ).autocomplete({
+        source: function( request, response ) {
+            $.ajax({
+                url: "/ssi/search_ga_autosuggest.php",
+                dataType: "json",
+                data: {
+                    q:request.term,
+                    search_type:$('#search_type').val()
+                },
+                success: function( data ) {
+                    response( $.map( data.results, function( item ) {
+                        return {
+                            label: item.name,
+                            value: item.name
+                        }
+                    }));
+                }
+
+            });
+        },
+        minLength: 1,
+        select: function(event,ui) {$('#head-search').val(ui.item.label);$('#head-search-form').submit();}
+    }).keydown(function(e){
+        if (e.keyCode === 13){
+            $("#head-search-form").submit();
+        }
+    });
+
+    $('#search-tabs div').buttonset();
+    $('#search-tabs input').change(function() {
+        $('#search-tabs').submit();
+    });
+
+    $(document).on('keyup', null, '/', function() {
+        $('#head-search').focus();
+    });
+});
+</script>
+
+
+   <div id="site-feedback-button">
+      <img src="/images/button.png" height="135" width="36" alt="Click to send us feedback" role="button" data-toggle="modal" data-target="#feedback-modal">
+   </div>
+   <div id="feedback-modal" class="modal hide fade">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>Send Us Feedback</h3>
+    </div>
+    <div class="modal-body">
+      <form id="feedback-form">
+        <p style="font-size:1.2em;font-weight:bold">How can we improve our website?</p>
+        <p>If reporting a bug, please include the name of your operating system, web browser, and browser version number.</p>
+        Your feedback:<br>
+        <textarea rows="5" class="span4" name="message" id="feedback-form-message"></textarea><br>
+        Your email (if you want a reply):<br>
+        <input type="text" class="span4" name="email" id="feedback-form-email"><br>
+        <button class="btn btn-primary">Send feedback</button>
+      </form>
+    </div>
+   </div>
+
+   </div>
+
+   <script src="/js/lib/amplify/amplify.min.js"></script>
+   <!--[if !IE 8]><!-->
+   <script>
+      $(function() {
+          var re = /^\/fred2\/series\/([^\/]+)\/*/,
+              recTitle = $('h1').text(),
+              series_id,
+              data = [],
+              origData,
+              reArr,
+              n = 0,
+              tmp = [];
+
+          reArr = re.exec(window.location.pathname);
+
+          if (re.test(window.location.pathname) ) {
+              origData = amplify.store('series') || [];
+              series_id = reArr[1];
+              if (typeof amplify.store('series') != 'undefined') {
+                  data = origData.filter(function (series) {
+                    return series.series_id.toLowerCase() != series_id.toLowerCase();
+                  });
+              }
+
+              data.push({
+                'series_id': series_id,
+                'timestamp': Date.now(),
+                'url' : window.location.pathname,
+                'title': recTitle
+                });
+
+              amplify.store('series', data);
+              if (data.length > 1) {
+                  $("#recently-viewed").removeClass("hide");
+              }
+
+              var items = $("#recently-viewed li"),
+                  g,
+                  graph_base = '//research.stlouisfed.org/fredgraph.png?type=image/png&chart_type=line&recession_bars=on&bgcolor=%23e1e9f0&graph_bgcolor=%23ffffff&show_legend=no&show_axis_titles=no&width=670&height=445&&mode=fred&ost=-99999&oet=99999&scale=left&line_color=%234572a7&line_style=solid&lw=2&id=';
+
+              $.each(origData.reverse().slice(0,5), function (index, obj) {
+                  $(items[index])
+                    .removeClass('hide')
+                    .find('a')
+                        .attr('href', obj.url)
+                        .end()
+                    .find('img')
+                        .attr('src', graph_base + obj.series_id)
+                        .end()
+                    .find('span')
+                        .text(obj.title)
+                        .end();
+              });
+          }
+      });
+  </script>
+  <!--<![endif]-->
+  <script>
+    $(function() {
+
+          $(document).on('click', '#add-to-dash-side a', function (e) {
+              var isChanged = $(document).data('redraw'),
+                  pop;
+
+              if (isChanged) {
+                  e.preventDefault();
+                  $(this).parent('.dropdown').removeClass('open');
+                  $('#add-to-dash-side').find('.dropdown-menu').remove();
+                  $(window).prop('location', '/useraccount/fredgraph?add_to_dash=1&action=add_graph&' + $.param(fredgraphUi.getOptionsAsLegacyObject()));
+               }
+          });
+      });
+
+      $(window).on('load', function (e) {
+          setTimeout(function () {
+             $(document).data('redraw', false);
+          }, 1500);
+      });
+
+      $('.select-all-checkboxes').click(function() {
+          $('input:checkbox').prop('checked',$(this).prop('checked'));
+      });
+      
+      $('.pager-item-checkbox').click(function() {
+          if ($(this).prop('checked')) {
+              return true;
+          }
+
+          $('.select-all-checkboxes').prop('checked', false);
+      });
+   
+      $('.help-question span.link').click(function() {
+          $(this).parent('.help-question').next('.help-answer').toggle();
+      });
+
+      $('#feedback-form').on('submit', function(e) {
+
+        e.preventDefault();
+
+        var data = {
+          name: (!$('#feedback-form-email').val()) ? 'FRED' : '',
+          subject: 'FRED feedback',
+          message: $('#feedback-form-message').val() +
+              "\n\n\n\n----------\n" + window.location.href + 
+              "\n" + navigator.userAgent,
+          email: $('#feedback-form-email').val()
+        };
+
+        $.post('/contactus/email_research_webmaster.php?', data)
+          .done(function() {
+            $('#feedback-form input').val('');
+            $('#feedback-form textarea').val('');
+            $('#feedback-modal').modal('hide');
+          });
+      });
+
+       </script>
+   
+            <script type="text/javascript">
+                $(".expand").click(function() {
+                    $(this).toggleClass("contract","expand");
+                    $(this).parent().children("ul:visible").slideUp();
+                    $(this).parent().children("ul:hidden").slideDown();
+                    
+                })              
+                
+            </script>
+        
+  </body>
+</html>
