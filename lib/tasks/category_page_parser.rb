@@ -17,8 +17,6 @@ module CategoryPageParser
       rtn_subcategories = []
       categories_group.css(".fred-categories-children").each do |children|
         children.css(".fred-categories-child").each do  |child|
-          # count = child.search('.category-count').text.to_i
-          # binding.pry
           child.search('.category-count').remove 
           link = child.css('a').first['href']
           child_nmae = child.text.strip
@@ -31,18 +29,28 @@ module CategoryPageParser
     def crawl_categories(top_cates, server_host)
       top_cates.each do |top_cate_name, values|
         values.each do |value|
-          html = Nokogiri::HTML(Curl.get(server_host+value[:link]).body_str)
-          ap("#{value[:name]}:#{is_nested_a_categories(html)}")
+          html = get_nokogiried_html(value[:link])
+          if is_nested_a_categories?(html)
+            html.css('table li a').each do |item_html|
+              text = item_html.text.strip
+              link = item_html['href']
+              parse_series_page(link)
+            end
+          else
+          end
+          # ap("#{value[:name]}:#{}")
         end
       end
     end
 
-    def is_nested_a_categories(html)
+    def is_nested_a_categories?(html)
       html.css('#content-2columns-main h2').each do |sub_html|
         return true if sub_html.text.strip == 'Categories'
       end
       return false
     end
+
+
     
   end
   

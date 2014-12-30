@@ -1,11 +1,14 @@
 require 'curb'
 require 'nokogiri'
+require 'date'
 require 'pry'
 require 'awesome_print'
 
 require File.expand_path('leaf_node_parser', File.dirname(__FILE__))
+require File.expand_path('leaf_node_parser_helper', File.dirname(__FILE__))
 require File.expand_path('category_page_parser', File.dirname(__FILE__))
 include LeafNodeParser
+include LeafNodeParserHelper
 include CategoryPageParser
 
 MODE = :debug
@@ -29,6 +32,10 @@ class IndicatorParser
     binding.pry
     leaf
   end
+
+  def get_nokogiried_html(link)
+    Nokogiri::HTML(Curl.get(@@host+link).body_str)
+  end  
 
   def run    
   end # end of parse
