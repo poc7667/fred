@@ -7,7 +7,7 @@ module LeafNodeParserHelper
     def get_name_and_updated_at_time(html, id)
       title = html.css("#content-2columns-main h1").first.text.strip
       subtitle, updated_at = html.css("div#recent-obs-table").first.next_element.text.strip.split(id)
-      title += subtitle
+      title += ", #{subtitle}"
       return title.strip, DateTime.strptime(updated_at.split("Updated:").last.strip, "%Y-%m-%d %H:%M %P %Z")
     end
 
@@ -24,11 +24,10 @@ module LeafNodeParserHelper
         cate.text
       end
     end
-  end # end of
+  end 
 
   def self.included(receiver)
     receiver.extend         ClassMethods
     receiver.send :include, InstanceMethods
   end
 end
-
