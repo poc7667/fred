@@ -85,3 +85,7 @@ gem "paperclip", "~> 4.1"
 
 
 gem "mongoid", "~> 4.0.0"
+gem 'mongoid_search', '~> 0.2.8'
+gem 'curb'
+gem 'nokogiri'
+gem 'awesome_print'
