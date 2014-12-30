@@ -8,7 +8,7 @@ module LeafNodeParserHelper
       title = html.css("#content-2columns-main h1").first.text.strip
       subtitle, updated_at = html.css("div#recent-obs-table").first.next_element.text.strip.split(id)
       title += subtitle
-      return title, DateTime.strptime(updated_at.split("Updated:").last.strip, "%Y-%m-%d %H:%M %P %Z")
+      return title.strip, DateTime.strptime(updated_at.split("Updated:").last.strip, "%Y-%m-%d %H:%M %P %Z")
     end
 
     def get_tags(html)

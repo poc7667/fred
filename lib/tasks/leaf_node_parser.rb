@@ -38,9 +38,9 @@ module LeafNodeParser
       begin
         ind = Indicator.create(
           id: id,
-          name: name,
-          categories: categories,
-          tags: tags
+          name: name.split(",").join(','),
+          categories: categories.join(','),
+          tags: tags.join(',')
           )
       rescue Exception => e
         print e
