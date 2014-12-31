@@ -4,6 +4,16 @@ module LeafNodeParserHelper
 
   module InstanceMethods
 
+    def duplicated_id?(leaf_lnk)
+      id = leaf_lnk.split('/').last
+      if Indicator.where(id: id).count > 0 
+        p "duplicated #{id}"
+        return true
+      else
+        return false
+      end      
+    end
+
     def get_name_and_updated_at_time(html, id)
       title = html.css("#content-2columns-main h1").first.text.strip
       subtitle, updated_at = html.css("div#recent-obs-table").first.next_element.text.strip.split(id)

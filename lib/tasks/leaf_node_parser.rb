@@ -8,6 +8,7 @@ module LeafNodeParser
       page_lnks.each do |lnk|
         html = get_nokogiried_html(lnk)
         get_leaf_lnks(html).each do |leaf_lnk|
+          next if duplicated_id?(leaf_lnk)
           parse_leaf_page(leaf_lnk)
         end
       end
@@ -42,6 +43,7 @@ module LeafNodeParser
           categories: categories.join(','),
           tags: tags.join(',')
           )
+        p "Count: #{Indicator.all.count}  id:#{ind.name}"
       rescue Exception => e
         print e
       end
