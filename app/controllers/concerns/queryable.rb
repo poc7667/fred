@@ -4,7 +4,7 @@ module Queryable
 
   def get_results
     setup
-    if (fields & ["id"]).count == 1
+    if (q.keys & ["id"]).count == 1
       results << Indicator.where(id: q["id"])
     else
       fields.each {|f| query(f) if q.has_key?(f)} 
