@@ -44,3 +44,5 @@ config/database.yml
 *.swp
 *.out
 
+
+/sample_query.txt
