@@ -89,3 +89,7 @@ gem 'mongoid_search', '~> 0.2.8'
 gem 'curb'
 gem 'nokogiri'
 gem 'awesome_print'
+
+#optimize json render
+gem "oj"
+gem 'oj_mimic_json'

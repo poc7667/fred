@@ -32,20 +32,26 @@ module LeafNodeParser
 
     def parse_leaf_page(lnk)
       html = get_nokogiried_html(lnk)
+      subtitle_html = html.css("#content-2columns-main h1").first.next_element
       id = lnk.split('/').last
       name, updated_at =  get_name_and_updated_at_time(html, id)
       tags = get_tags(html)
       categories = get_related_categories(html)
+      date = get_date(subtitle_html)
+      value = get_value(subtitle_html)
       begin
         ind = Indicator.create(
           id: id,
           name: name.split(",").join(','),
           categories: categories.join(','),
-          tags: tags.join(',')
+          tags: tags.join(','),
+          value: value,
+          date: date,
+          updated_at: updated_at
           )
         p "Count: #{Indicator.all.count}  id:#{ind.name}"
       rescue Exception => e
-        print e
+        ap(e)
       end
     end
 
