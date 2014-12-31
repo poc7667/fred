@@ -5,7 +5,7 @@ module Queryable
   def get_results
     setup
     if (q.keys & ["id"]).count == 1
-      results << Indicator.where(id: q["id"])
+      results << Indicator.only(:_id, :name, :categories, :tags, :date, :value).where(id: q["id"])
     else
       fields.each {|f| query(f) if q.has_key?(f)} 
     end
@@ -26,7 +26,7 @@ module Queryable
       values = q[field].gsub(/"/, '').gsub(/'/, '').split(",")
       ap(values)
       values.each do |value|
-        q_result = Indicator.only(:id, :name, :categories, :tags, :date, :value).where("#{field}"=>/.*#{value}.*/).to_a
+        q_result = Indicator.only(:_id, :name, :categories, :tags, :date, :value).where("#{field}"=>/.*#{value}.*/).to_a
         if q_result.count > 0
           ap(q_result)
           self.results << q_result 
