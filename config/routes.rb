@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'query/index'
+
   resources :indicators
 
   # The priority is based upon order of creation: first created -> highest priority.

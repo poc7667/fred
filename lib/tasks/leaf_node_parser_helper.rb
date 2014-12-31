@@ -11,7 +11,7 @@ module LeafNodeParserHelper
         return true
       else
         return false
-      end      
+      end
     end
 
     def get_name_and_updated_at_time(html, id)
