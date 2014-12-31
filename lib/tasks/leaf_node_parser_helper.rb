@@ -11,7 +11,7 @@ module LeafNodeParserHelper
         return true
       else
         return false
-      end      
+      end
     end
 
     def get_name_and_updated_at_time(html, id)
@@ -34,6 +34,15 @@ module LeafNodeParserHelper
         cate.text
       end
     end
+
+    def get_date(html)
+      html.css("span").first.text.gsub! ':', ''
+    end
+
+    def get_value(html)
+      html.css("strong").first.text
+    end
+
   end 
 
   def self.included(receiver)
