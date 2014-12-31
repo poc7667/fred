@@ -9,7 +9,7 @@ module Queryable
     else
       fields.each {|f| query(f) if q.has_key?(f)} 
     end
-    teardown
+    # teardown
     results
   end
 
@@ -17,6 +17,8 @@ module Queryable
     self.q = params
     self.fields = ["name", "tags", "categories"]
     self.results = []
+    q.delete("controller")
+    q.delete("action")
   end
 
   def query(field)
@@ -37,9 +39,13 @@ module Queryable
   end
 
   def teardown
-    host = "http://localhost:3000/"
+    host = "http://ec2-54-160-124-159.compute-1.amazonaws.com:8003/"
     q_str = "#{host}?"+URI::unescape(q.to_query)    
-    Rails.logger.debug(q_str)
+    File.open(File.expand_path('sample_query.txt', Rails.root), 'a+') do |f|
+      f.puts q_str
+      f.puts "\n"
+    end
+    # Rails.logger.debug(q_str)
   end
 
 end

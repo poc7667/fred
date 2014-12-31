@@ -24,9 +24,29 @@ RSpec.describe QueryController, :type => :controller do
     it "find by name"  do
       get :index, {
         name: "Total Number of Locomotives Assigned",
-        id: "Q10099USQ144NNBR"
       }
     end
+
+
+    it "find by tags"  do
+      get :index, {
+        tags: "fertilizers",
+      }
+    end
+
+    it "find by multiple names" do
+      get :index, {
+        name: "Total Number of Locomotives Assigned,Automobile"
+      }
+    end
+
+    it "find by multiple names and categories" do
+      get :index,{
+        categories: "Macrohistory",
+        name: "Cotton,Gasoline"
+      }
+    end
+
   end
 
 
