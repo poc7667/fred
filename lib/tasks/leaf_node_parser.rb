@@ -25,9 +25,16 @@ module LeafNodeParser
 
     def get_remain_series_pages(lnk)
       html = get_nokogiried_html(lnk)
-      return html.css("p b").first.parent.css("a").collect do |lnk|
-        lnk["href"]
+      begin
+        return html.css("p b").first.parent.css("a").collect do |lnk|
+          lnk["href"]
+        end        
+      rescue Exception => e
+        p "link #{lnk}"
+        p "e"
+        return []
       end
+
     end
 
     def parse_leaf_page(lnk)
